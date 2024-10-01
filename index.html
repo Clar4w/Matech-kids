@@ -7,11 +7,11 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            text-align: center;
         }
         header {
             background-color: #4CAF50;
@@ -19,22 +19,45 @@
             color: white;
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
+            animation: fadeIn 2s ease-in-out;
         }
         h2 {
             color: #fff;
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin: 10px 0;
+            animation: slideDown 2s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
         .intro {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px auto;
             padding: 20px;
             width: 80%;
             max-width: 600px;
+            margin: 30px auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .robot-image {
+            width: 200px;
+            margin-top: 20px;
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
         .btn {
             background-color: #4CAF50;
@@ -52,24 +75,15 @@
         footer {
             margin-top: 20px;
             font-size: 0.8em;
-            color: #666;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Matech-kids</h1>
-        <h2>Vamos Montar um Robô!</h2>
+        <h2>Uma Jornada Matemática e Robótica!</h2>
     </header>
 
     <div class="intro">
-        <p>Bem-vindo ao <strong>Matech-kids</strong>! Aqui, a diversão e o aprendizado se encontram. Você está prestes a embarcar em uma aventura incrível onde a matemática se transforma em robótica!</p>
-        <p>Resolva os desafios matemáticos e desbloqueie peças do robô. Cada conta é uma chave que te levará à montagem do seu robô dos sonhos!</p>
-        <button class="btn" onclick="location.href='path/to/math-questions.html'">Começar a Aventura!</button>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Matech-kids. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+        <p>Bem-vindo ao <strong>Matech-kids</strong>, onde aprender matemática é uma aventura! Resolva os desafios matemáticos e desbloqueie peças
