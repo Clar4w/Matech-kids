@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matech-kids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
+            background: url('url-da-imagem.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             text-align: center;
         }
@@ -21,17 +23,19 @@
         h1 {
             font-size: 3em;
             margin: 0;
-            animation: fadeIn 2s ease-in-out;
+            animation: colorChange 5s infinite alternate ease-in-out;
         }
         h2 {
-            color: #fff;
+            color: #ffeb3b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Comic Sans MS', cursive;
             font-size: 1.8em;
             margin: 10px 0;
             animation: slideDown 2s ease;
         }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        @keyframes colorChange {
+            0% { color: #fff; }
+            100% { color: #f0c; }
         }
         @keyframes slideDown {
             0% { transform: translateY(-50px); opacity: 0; }
@@ -46,18 +50,25 @@
             margin: 30px auto;
             animation: fadeIn 2s ease-in-out;
         }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
         p {
             font-size: 1.2em;
         }
         .robot-image {
             width: 200px;
             margin-top: 20px;
-            animation: bounce 3s infinite;
+            transition: transform 0.3s ease-in-out;
+            animation: slideIn 1.5s forwards ease;
         }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+        @keyframes slideIn {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .robot-image:hover {
+            transform: scale(1.2) rotate(10deg);
         }
         .btn {
             background-color: #4CAF50;
@@ -67,23 +78,44 @@
             font-size: 1.2em;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .btn:hover {
             background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
         footer {
             margin-top: 20px;
             font-size: 0.8em;
             color: #ccc;
         }
+        section {
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        section:nth-of-type(odd) {
+            background-color: #e0f7fa;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Matech-kids</h1>
-        <h2>Uma Jornada Matemática e Robótica!</h2>
+        <h2>Onde a Matemática Encontra a Diversão na Robótica!</h2>
     </header>
 
     <div class="intro">
-        <p>Bem-vindo ao <strong>Matech-kids</strong>, onde aprender matemática é uma aventura! Resolva os desafios matemáticos e desbloqueie peças
+        <p>Bem-vindo ao <strong>Matech-kids</strong>! Aqui, a matemática é a chave para desbloquear peças e montar seu robô. Cada problema resolvido traz você mais perto de completar sua criação.</p>
+        <i class="fas fa-robot" style="font-size: 5em; color: #ffeb3b;"></i>
+        <p>Pronto para começar? Clique no robô e resolva os desafios matemáticos!</p>
+        <img src="url-do-robo.png" class="robot-image" alt="Robô Matech">
+        <button class="btn">Clique Aqui para Começar!</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Matech-kids. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
