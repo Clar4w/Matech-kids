@@ -4,46 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matech-Kids</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Merriweather', serif;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #FAF3E0; /* Bege claro para o fundo */
+            background-color: #ffffff; /* Fundo branco */
         }
         header {
             background-color: #001F54; /* Azul profundo */
             padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         header h1 {
             color: #ffffff;
-            font-size: 40px;
+            font-size: 42px;
             margin: 0;
             font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         h2 {
             color: #001F54; /* Azul profundo */
-            font-size: 30px;
-            margin-bottom: 20px;
+            font-size: 34px;
+            margin-bottom: 25px;
             font-weight: 700;
+            letter-spacing: 1.5px;
         }
         p {
-            color: #001F54; /* Azul profundo */
+            color: #333333;
             font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: 400;
         }
         .intro-img {
-            width: 100px;
+            width: 150px;
             height: auto;
             margin: 20px 0;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+        }
+        .highlight {
+            color: #001F54;
+            font-size: 20px;
+            font-weight: 700;
         }
         .button {
             background-color: #001F54; /* Azul profundo */
@@ -51,16 +62,28 @@
             padding: 15px 25px;
             text-align: center;
             text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
+            font-size: 18px;
+            border-radius: 8px;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
+            box-shadow: 0 6px 12px rgba(0, 31, 84, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #004080;
+        }
+        .small-text {
+            font-size: 14px;
+            color: #555555;
+            margin-top: 10px;
         }
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             padding: 20px;
             background-color: #001F54; /* Azul profundo */
             color: white;
+            font-size: 14px;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -74,14 +97,17 @@
     <!-- Conteúdo principal -->
     <div class="container">
         <h2>Bem-vindo ao Matech-Kids!</h2>
-        <p>Prepare-se para uma aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
-        <p>Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa!</p>
+        <p class="highlight">Prepare-se para uma aventura onde a matemática e a robótica se unem.</p>
+        <p>Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
 
         <!-- Robôzinho Simbólico -->
-        <img class="intro-img" src="https://via.placeholder.com/100x100?text=%F0%9F%A4%96" alt="Carinha do Robô">
+        <img class="intro-img" src="https://via.placeholder.com/150x150?text=%F0%9F%A4%96" alt="Carinha do Robô">
 
         <!-- Botão para começar -->
         <a class="button" href="#">Começar a montar seu robô!</a>
+
+        <!-- Texto menor sobre os alunos do nono ano -->
+        <p class="small-text">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
     </div>
 
     <!-- Rodapé -->
