@@ -5,44 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matech-Kids</title>
     <style>
-        /* Estilizando o fundo do site com as cores da imagem */
+        /* Estilizando o fundo geral */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #7FB3D5 50%, #2980B9 50%);
+            background-color: #FFFFFF; /* Fundo branco */
             margin: 0;
             padding: 0;
-            color: #FFFFFF; /* Letra em branco para contraste */
+            color: #000000; /* Letra preta para contraste */
         }
 
-        /* Estilizando o título */
+        /* Estilizando o título principal com retângulo ao redor */
         h1 {
             font-family: 'Serif Bold', serif;
-            font-size: 56px;
-            color: #F44336; /* Vermelho chamativo */
+            font-size: 60px;
+            color: #FFFFFF; /* Letra branca */
             text-align: center;
             margin-top: 50px;
-            text-shadow: 2px 2px #001f3f; /* Sombra azul profundo */
+            text-shadow: 3px 3px #001f3f; /* Sombra azul profundo */
+            background-color: #1A5276; /* Azul profundo ao redor do nome */
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 15px; /* Bordas arredondadas no retângulo */
         }
 
-        /* Subtítulo com cores e sombra */
+        /* Subtítulo */
         h2 {
-            font-family: 'Serif Bold', serif;
-            font-size: 40px;
+            font-family: 'Arial', sans-serif;
+            font-size: 36px;
             text-align: center;
-            color: #FFFFFF;
-            text-shadow: 1px 1px #1A5276; /* Azul mais escuro */
-            margin-bottom: 20px;
+            color: #F44336; /* Vermelho chamativo */
+            margin-top: 20px;
+            text-shadow: 2px 2px #000000; /* Sombra preta para destaque */
         }
 
         /* Texto da introdução */
         p {
-            font-size: 20px;
+            font-size: 22px;
             text-align: center;
-            margin: 0 15%;
-            color: #FFFFFF;
-            background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente para destacar o texto */
+            margin: 0 10%;
+            color: #333333;
+            background-color: rgba(245, 245, 245, 0.8); /* Fundo levemente cinza claro */
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 10px;
         }
 
         /* Informações dos alunos do nono ano */
@@ -50,19 +54,11 @@
             font-size: 16px;
             text-align: center;
             margin-top: 10px;
-            color: #F44336; /* Letra vermelha chamativa */
+            color: #F44336;
             font-style: italic;
         }
 
-        /* Estilizando o robô ou imagem simbólica */
-        .robot-img {
-            display: block;
-            margin: 20px auto;
-            width: 200px;
-            height: auto;
-        }
-
-        /* Botões ou elementos interativos */
+        /* Botão chamativo */
         .button {
             display: inline-block;
             background-color: #F44336;
@@ -76,15 +72,25 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Efeito hover para os botões */
+        /* Efeito hover para o botão */
         .button:hover {
-            background-color: #E74C3C; /* Efeito hover mais claro */
+            background-color: #E74C3C;
+        }
+
+        /* Estilizando o rodapé */
+        footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1A5276;
+            color: white;
         }
 
     </style>
 </head>
 <body>
-    <!-- Título Principal -->
+    <!-- Título Principal com o retângulo ao redor -->
     <h1>Matech-Kids</h1>
     
     <!-- Subtítulo de Boas-vindas -->
@@ -95,18 +101,20 @@
         Prepare-se para uma aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. 
         Cada conta é uma chave para a próxima parte da construção. Vamos nessa!
     </p>
-    
+
     <!-- Informações sobre os alunos do nono ano -->
     <p class="info-nono-ano">
-        Site criado pelos alunos do nono ano.
+        Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.
     </p>
 
-    <!-- Imagem simbólica do robô (colocar o caminho da imagem) -->
-    <img src="caminho/para/imagem-do-robo.png" alt="Robô simbólico" class="robot-img">
-
-    <!-- Botão Interativo (se quiser incluir mais interação) -->
+    <!-- Botão chamativo -->
     <div style="text-align: center;">
         <button class="button">Começar a Aventura</button>
     </div>
+
+    <!-- Rodapé com informações -->
+    <footer>
+        © 2024 - Matech-Kids. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
