@@ -13,20 +13,26 @@
             padding: 0;
         }
 
-        /* Estilizando o título principal */
-        h1 {
-            font-family: 'Serif Bold', serif;
-            font-size: 48px;
-            color: #001f3f; /* Azul Oxford */
+        /* Estilizando o título principal com fundo azul escuro */
+        .title-container {
+            background-color: #001f3f; /* Azul escuro */
+            padding: 20px;
             text-align: center;
-            margin-top: 30px;
         }
 
-        /* Estilizando o subtítulo */
+        .title-container h1 {
+            font-family: 'Serif Bold', serif;
+            font-size: 48px;
+            color: #e6f0ff; /* Texto em azul claro */
+            margin: 0;
+            text-shadow: 2px 2px #000; /* Sombra no texto */
+        }
+
+        /* Estilizando o subtítulo em azul profundo */
         h2 {
             font-family: 'Serif Bold', serif;
             font-size: 30px;
-            color: #001f3f;
+            color: #003366; /* Azul profundo */
             text-align: center;
             margin: 10px 0;
         }
@@ -50,6 +56,14 @@
             height: auto;
         }
 
+        /* Estilizando o texto sobre o nono ano em vermelho */
+        .nono-ano {
+            font-size: 14px;
+            color: red; /* Texto em vermelho */
+            text-align: center;
+            margin: 10px 20px;
+        }
+
         /* Rodapé */
         footer {
             text-align: center;
@@ -62,25 +76,27 @@
     </style>
 </head>
 <body>
-    <!-- Título Principal -->
-    <h1>Matech-Kids</h1>
+    <!-- Título Principal com fundo azul escuro -->
+    <div class="title-container">
+        <h1>Matech-Kids</h1>
+    </div>
 
-    <!-- Subtítulo de boas-vindas -->
+    <!-- Subtítulo de boas-vindas com azul profundo -->
     <h2>Bem-vindos ao Matech-Kids</h2>
     
-    <!-- Parágrafo descritivo -->
+    <!-- Container da Imagem -->
+    <div class="image-container">
+        <img src="/mnt/data/A8877DB6-AFFA-4C03-A365-3ADE45ED7588.jpeg" alt="Imagem de crianças montando">
+    </div>
+
+    <!-- Parágrafo descritivo sobre a aventura -->
     <p>Prepare-se para uma aventura onde a matemática e a robótica se unem.<br>
     Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô.<br>
     Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
 
-    <!-- Parágrafo sobre os alunos do nono ano -->
-    <p style="font-size: 14px;">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
+    <!-- Parágrafo sobre os alunos do nono ano em vermelho -->
+    <p class="nono-ano">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
     
-    <!-- Container da Imagem -->
-    <div class="image-container">
-        <img src="/mnt/data/A8AC157A-D1EF-4EC8-918C-E3FEB0ABE6D2.jpeg" alt="Imagem de crianças montando">
-    </div>
-
     <!-- Rodapé com direitos -->
     <footer>
         © 2024 - Matech-Kids. Todos os direitos reservados.
