@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagem do Robô</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .image-container img {
+            width: 200px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            display: none; /* Esconde as peças inicialmente */
+        }
+        #resultado {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resolva os cálculos para desbloquear as peças do robô!</h1>
+    
+    <div id="calculadora">
+        <p id="questao"></p>
+        <input type="number" id="resposta" placeholder="Digite sua resposta">
+        <button onclick="verificarResposta()">Responder</button>
+        <div id="resultado"></div>
+    </div>
+    
+    <!-- Imagens das peças do robô -->
+    <div class="image-container">
+        <img id="peca1" src="link_da_peca_1.png" alt="Peça 1">
+        <img id="peca2" src="link_da_peca_2.png" alt="Peça 2">
+        <img id="peca3" src="link_da_peca_3.png" alt="Peça 3">
+        <img id="peca4" src="link_da_peca_4.png" alt="Peça 4">
+        <!-- Adicione mais peças conforme necessário -->
+    </div>
+    
+    <script>
+        let respostaCorreta;
+        let pecasDesbloqueadas = 0;
 
+        function novaQuestao() {
+            const a = Math.floor(Math.random() * 10) + 1; // Número aleatório de 1 a 10
+            const b = Math.floor(Math.random() * 10) + 1; // Número aleatório de 1 a 10
+            respostaCorreta = a * b;
+            document.getElementById('questao').innerText = `Quanto é ${a} x ${b}?`;
+        }
+
+        function verificarResposta() {
+            const resposta = parseInt(document.getElementById('resposta').value);
+            const resultado = document.getElementById('resultado');
+
+            if (resposta === respostaCorreta) {
+                resultado.innerText = "Correto! Peça desbloqueada!";
+                document.getElementById(`peca${pecasDesbloqueadas + 1}`).style.display = 'block'; // Mostra a peça
+                pecasDesbloqueadas++;
+
+                if (pecasDesbloqueadas < 4) { // Troca a questão após responder corretamente
+                    novaQuestao();
+                } else {
+                    resultado.innerText += " Você desbloqueou todas as peças! Acesse o manual de instruções.";
+                    // Aqui você pode adicionar o link para o manual de instruções
+                }
+            } else {
+                resultado.innerText = "Tente novamente!";
+            }
+
+            document.getElementById('resposta').value = ''; // Limpa o campo de resposta
+        }
+
+        // Inicia com uma nova questão
+        novaQuestao();
+    </script>
+</body>
+</html>
