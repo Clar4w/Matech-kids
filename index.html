@@ -7,77 +7,81 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Cor de fundo azul clara */
-            color: #002147; /* Azul profundo para o texto */
+            background-color: #f5f5f5; /* Cor de fundo branca */
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
             font-family: 'Serif Bold', Arial, sans-serif;
-            font-size: 48px;
-            color: #002147; /* Azul profundo para o título */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra no texto */
-            padding: 20px;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
+            font-size: 60px;
+            color: #002147; /* Azul profundo */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Sombra no título */
+            margin-top: 40px;
+            background-color: #003366; /* Fundo azul escuro */
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 10px;
         }
 
         .introducao {
-            background-color: #e3f2fd; /* Fundo azul claro */
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            color: #003366; /* Azul profundo para o texto */
+            margin-top: 20px;
+            padding: 0 20px;
         }
 
         .imagem {
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
-        /* Estilização aprimorada do botão */
+        .imagem img {
+            width: 300px;
+        }
+
+        /* Estilo do botão */
         .botao-montagem {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #007BFF; /* Cor do botão */
+            padding: 15px 40px;
+            background-color: #003366; /* Azul escuro */
             color: white;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Sombra do botão */
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.5); /* Sombra do botão */
         }
 
         .botao-montagem:hover {
-            background-color: #0056b3; /* Cor ao passar o mouse */
+            background-color: #001f4d; /* Cor ao passar o mouse */
             transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.7); /* Efeito de sombra ao passar o mouse */
         }
 
         .nono-ano {
             font-size: 14px;
-            color: red; /* Texto em vermelho para o nono ano */
-            margin-top: 30px;
+            color: red;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Matech-Kids</h1>
-        <div class="introducao">
-            <p>Bem-vindos ao Matech-Kids.</p>
-            <p>Prepare-se para uma aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô.</p>
-            <p>Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
-            <div class="imagem">
-                <img src="caminho-para-sua-imagem.png" alt="Imagem de crianças montando um robô" width="300">
-            </div>
-            <!-- Botão estilizado -->
-            <a href="montagem.html" class="botao-montagem">Começar a Montagem</a>
+    <h1>Matech-Kids</h1>
+    
+    <div class="introducao">
+        <p>Bem-vindos ao Matech-Kids. Prepare-se para uma aventura onde a matemática e a robótica se unem!</p>
+        <p>Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô.</p>
+        <p>Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
+
+        <div class="imagem">
+            <img src="caminho-para-sua-imagem.png" alt="Imagem de crianças montando robôs">
         </div>
 
-        <p class="nono-ano">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
+        <!-- Botão estilizado -->
+        <a href="montagem.html" class="botao-montagem">Começar a Montagem</a>
     </div>
+
+    <p class="nono-ano">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
 </body>
 </html>
