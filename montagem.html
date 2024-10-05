@@ -1,78 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha Seu Robô</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #003366; /* Fundo azul escuro preenchido */
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Preenche a página toda */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolha o Robô</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0D2C54; /* Fundo azul escuro, igual da página inicial */
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1 {
-            color: #ffffff; /* Texto mais claro */
-            font-family: 'Serif Bold', serif;
-            font-size: 48px;
-            padding: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento igual ao título "Matech-Kids" */
-            background-color: #002244; /* Fundo para o título */
-            margin: 0;
-        }
+    h1 {
+      font-size: 2.5em; /* Diminui o tamanho do texto para caber melhor */
+      color: #FFFFFF;
+      text-shadow: 2px 2px 4px #000000; /* Sombra igual ao título Matech-Kids */
+      margin-top: 50px;
+    }
 
-        .robot-choice-container {
-            display: flex;
-            flex-direction: column; /* Alinha as imagens uma embaixo da outra */
-            align-items: center;
-            margin-top: 30px;
-        }
+    .robot-container {
+      margin-top: 30px;
+    }
 
-        .robot-choice-container div {
-            margin-bottom: 20px; /* Espaçamento entre as imagens */
-        }
+    .robot-container img {
+      width: 200px;
+      height: auto;
+      margin: 20px 0;
+    }
 
-        .robot-choice-container img {
-            width: 200px;
-            height: auto;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
 
-        .robot-choice-container img:hover {
-            transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-        }
-
-        p {
-            color: #ffffff; /* Texto mais claro nas descrições */
-            font-size: 20px;
-            margin-top: 10px;
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Título principal -->
-    <h1>Escolha o robô que você gostaria de montar</h1>
 
-    <!-- Container das imagens dos robôs -->
-    <div class="robot-choice-container">
-        <!-- Robô Dançarino -->
-        <div>
-            <img src="link-para-imagem-robo1.png" alt="Robô Dançarino" onclick="window.location.href='robo-dancarino.html'">
-            <p>Robô Dançarino</p>
-        </div>
+  <h1>Escolha o robô que você gostaria de montar</h1>
 
-        <!-- Robô Pulga -->
-        <div>
-            <img src="link-para-imagem-robo2.png" alt="Robô Pulga" onclick="window.location.href='robo-pulga.html'">
-            <p>Robô Pulga</p>
-        </div>
-    </div>
+  <div class="robot-container">
+    <a href="robo_dancarino.html">
+      <img src="robo_dancarino.jpg" alt="Robô Dançarino">
+      <p>Robô Dançarino</p>
+    </a>
+    <a href="robo_pulga.html">
+      <img src="robo_pulga.jpg" alt="Robô Pulga">
+      <p>Robô Pulga</p>
+    </a>
+  </div>
+
 </body>
 </html>
