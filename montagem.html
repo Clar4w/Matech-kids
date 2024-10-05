@@ -13,12 +13,19 @@
             padding: 20px;
         }
 
+        /* Estilo para a área do título */
+        .title-container {
+            background-color: #003366; /* Fundo azul escuro */
+            padding: 20px;
+            margin: 0 auto;
+            width: fit-content; /* A largura se ajusta ao conteúdo */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+
         h1 {
-            color: #B0C4DE; /* Azul claro no texto */
-            background-color: #003366; /* Fundo azul escuro apenas no título */
+            color: #B0C4DE; /* Texto em azul mais claro */
             font-family: 'Serif Bold', serif;
             font-size: 36px;
-            padding: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento no texto */
             margin: 0;
         }
@@ -51,8 +58,10 @@
     </style>
 </head>
 <body>
-    <!-- Título principal com fundo azul escuro -->
-    <h1>Escolha o robô que você gostaria de montar</h1>
+    <!-- Título principal com fundo azul escuro nas laterais e texto azul claro -->
+    <div class="title-container">
+        <h1>Escolha o robô que você gostaria de montar</h1>
+    </div>
 
     <!-- Container das imagens dos robôs -->
     <div class="robot-choice-container">
