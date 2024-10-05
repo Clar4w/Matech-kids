@@ -7,22 +7,30 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #003366; /* Fundo azul escuro preenchendo toda a página */
+            background-color: #003366; /* Fundo azul escuro preenchido */
             text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            height: 100vh; /* Preenche a página toda */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
             color: #ffffff; /* Texto mais claro */
             font-family: 'Serif Bold', serif;
-            font-size: 36px;
+            font-size: 48px;
             padding: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento no texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento igual ao título "Matech-Kids" */
+            background-color: #002244; /* Fundo para o título */
+            margin: 0;
         }
 
         .robot-choice-container {
-            display: block; /* Organiza as imagens em colunas */
+            display: flex;
+            flex-direction: column; /* Alinha as imagens uma embaixo da outra */
+            align-items: center;
             margin-top: 30px;
         }
 
@@ -43,7 +51,7 @@
 
         p {
             color: #ffffff; /* Texto mais claro nas descrições */
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 10px;
         }
     </style>
