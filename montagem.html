@@ -3,78 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montagem do Robô</title>
+    <title>Escolha Seu Robô</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f5f5f5;
             text-align: center;
+            margin: 0;
+            padding: 20px;
         }
-        .image-container img {
-            width: 200px; /* Ajuste o tamanho conforme necessário */
+
+        h1 {
+            font-family: 'Serif Bold', serif;
+            font-size: 36px;
+            color: #003366;
+        }
+
+        .robot-choice-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .robot-choice-container img {
+            width: 200px;
             height: auto;
-            display: none; /* Esconde as peças inicialmente */
+            cursor: pointer;
+            transition: transform 0.3s;
         }
-        #resultado {
-            font-size: 20px;
-            margin: 20px 0;
+
+        .robot-choice-container img:hover {
+            transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+        }
+
+        .instructions {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Resolva os cálculos para desbloquear as peças do robô!</h1>
-    
-    <div id="calculadora">
-        <p id="questao"></p>
-        <input type="number" id="resposta" placeholder="Digite sua resposta">
-        <button onclick="verificarResposta()">Responder</button>
-        <div id="resultado"></div>
-    </div>
-    
-    <!-- Imagens das peças do robô -->
-    <div class="image-container">
-        <img id="peca1" src="link_da_peca_1.png" alt="Peça 1">
-        <img id="peca2" src="link_da_peca_2.png" alt="Peça 2">
-        <img id="peca3" src="link_da_peca_3.png" alt="Peça 3">
-        <img id="peca4" src="link_da_peca_4.png" alt="Peça 4">
-        <!-- Adicione mais peças conforme necessário -->
-    </div>
-    
-    <script>
-        let respostaCorreta;
-        let pecasDesbloqueadas = 0;
+    <!-- Título principal -->
+    <h1>Escolha o robô que você gostaria de montar</h1>
 
-        function novaQuestao() {
-            const a = Math.floor(Math.random() * 10) + 1; // Número aleatório de 1 a 10
-            const b = Math.floor(Math.random() * 10) + 1; // Número aleatório de 1 a 10
-            respostaCorreta = a * b;
-            document.getElementById('questao').innerText = `Quanto é ${a} x ${b}?`;
+    <!-- Container das imagens dos robôs -->
+    <div class="robot-choice-container">
+        <!-- Robô 1 -->
+        <div>
+            <img src="link-para-imagem-robo1.png" alt="Robô 1" onclick="escolherRobo('robo1')">
+            <p>Robô 1</p>
+        </div>
+
+        <!-- Robô 2 -->
+        <div>
+            <img src="link-para-imagem-robo2.png" alt="Robô 2" onclick="escolherRobo('robo2')">
+            <p>Robô 2</p>
+        </div>
+    </div>
+
+    <!-- Instruções -->
+    <p class="instructions" id="instructions"></p>
+
+    <!-- Container para os cálculos -->
+    <div id="calculos" style="display: none;">
+        <p>Resolva o seguinte cálculo para desbloquear uma peça do robô:</p>
+        <p id="pergunta"></p>
+        <input type="number" id="resposta" placeholder="Digite sua resposta">
+        <button onclick="verificarResposta()">Enviar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        // Função para escolher o robô
+        function escolherRobo(robo) {
+            document.getElementById('instructions').innerText = "Resolva os cálculos para desbloquear as peças do " + (robo === 'robo1' ? 'Robô 1' : 'Robô 2');
+            document.getElementById('calculos').style.display = 'block'; // Exibe o container dos cálculos
+            mostrarPergunta(); // Inicia a primeira conta
         }
 
+        // Perguntas e respostas (você pode adicionar mais)
+        const perguntas = [
+            { pergunta: "4 x 4", resposta: 16 },
+            { pergunta: "5 x 3", resposta: 15 },
+            { pergunta: "6 x 2", resposta: 12 }
+        ];
+
+        let perguntaAtual = 0;
+
+        // Função para mostrar a pergunta
+        function mostrarPergunta() {
+            document.getElementById('pergunta').innerText = perguntas[perguntaAtual].pergunta;
+        }
+
+        // Função para verificar a resposta
         function verificarResposta() {
             const resposta = parseInt(document.getElementById('resposta').value);
-            const resultado = document.getElementById('resultado');
-
-            if (resposta === respostaCorreta) {
-                resultado.innerText = "Correto! Peça desbloqueada!";
-                document.getElementById(`peca${pecasDesbloqueadas + 1}`).style.display = 'block'; // Mostra a peça
-                pecasDesbloqueadas++;
-
-                if (pecasDesbloqueadas < 4) { // Troca a questão após responder corretamente
-                    novaQuestao();
+            if (resposta === perguntas[perguntaAtual].resposta) {
+                document.getElementById('resultado').innerText = "Correto! Você desbloqueou uma peça!";
+                perguntaAtual++; // Avança para a próxima pergunta
+                if (perguntaAtual < perguntas.length) {
+                    mostrarPergunta(); // Mostra a próxima pergunta
                 } else {
-                    resultado.innerText += " Você desbloqueou todas as peças! Acesse o manual de instruções.";
-                    // Aqui você pode adicionar o link para o manual de instruções
+                    document.getElementById('resultado').innerText = "Parabéns! Você desbloqueou todas as peças e pode montar o robô!";
                 }
             } else {
-                resultado.innerText = "Tente novamente!";
+                document.getElementById('resultado').innerText = "Resposta incorreta. Tente novamente!";
             }
-
-            document.getElementById('resposta').value = ''; // Limpa o campo de resposta
         }
-
-        // Inicia com uma nova questão
-        novaQuestao();
     </script>
 </body>
 </html>
