@@ -3,120 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matech-Kids</title>
+    <title>Aventura Matemática e Robótica</title>
     <style>
-        /* Estilo geral do corpo */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
+        * {
             margin: 0;
             padding: 0;
-            background-image: url('https://example.com/fundo_ceu_nuvens_sol.png'); /* Coloque a imagem do céu com nuvens e sol aqui */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* Estilizando o container principal do título */
-        .title-container {
-            background-color: #001f3f; /* Azul escuro */
-            padding: 20px;
-            text-align: center;
-        }
-
-        .title-container h1 {
-            font-family: 'Serif Bold', serif; /* Fonte que estava antes */
-            font-size: 48px;
-            color: #e6f0ff; /* Azul claro */
-            margin: 0;
-            text-shadow: 2px 2px #000;
-        }
-
-        /* Subtítulo principal */
-        .subtitle {
-            font-family: 'Serif Bold', serif; /* Fonte que estava antes */
-            font-size: 30px;
-            color: #003366; /* Azul profundo */
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* Robô caminhãozinho no fundo */
-        .caminhao-container {
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .caminhao-container img {
-            width: 200px;
-            height: auto;
-        }
-
-        /* Estilizando o texto de apresentação */
-        .description {
-            font-size: 18px;
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #eef7fc;
             color: #333;
             text-align: center;
-            margin: 20px;
+            overflow-x: hidden;
+            background-image: url('background-pattern.png'); /* Background pattern */
         }
 
-        /* Estilizando o botão */
-        .botao-montagem {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #003366; /* Azul escuro */
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.5);
+        .hidden {
+            display: none;
         }
 
-        .botao-montagem:hover {
-            background-color: #001f4d; /* Efeito de hover */
-            transform: scale(1.05);
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            font-size: 14px;
-            margin-top: 40px;
+        header {
+            background-color: #4FC3F7;
             padding: 20px;
-            background-color: #001f3f;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: #ffcc00;
+            text-shadow: 2px 2px #006494;
+        }
+
+        .top-bar p {
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .start-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.4em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: #ffdd44;
+            transform: scale(1.1);
+        }
+
+        #challenges, #robot-parts, #robot-gallery {
+            padding: 40px 20px;
+        }
+
+        .robot-container, .parts-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .robot, .robot-part {
+            display: inline-block;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .robot:hover, .robot-part:hover {
+            transform: scale(1.1);
+        }
+
+        .robot img, .robot-part img {
+            width: 120px;
+            height: 120px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .robot p, .robot-part p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #006494;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px #ffcc00;
+        }
+
+        footer {
+            background-color: #4CAF50;
             color: white;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+        }
+
+        /* Efeitos de animação */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .robot, .robot-part {
+            animation: fadeIn 0.6s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <!-- Título principal com fundo azul escuro -->
-    <div class="title-container">
-        <h1>Matech Kids</h1>
-        <h2 class="subtitle">Construindo robôs e solucionando problemas matemáticos</h2>
-    </div>
 
-    <!-- Robô caminhãozinho carregando blocos -->
-    <div class="caminhao-container">
-        <img src="https://example.com/robo_caminhao.png" alt="Robô caminhão carregando blocos">
-    </div>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="top-bar">
+            <h1>Building Robots</h1>
+            <p>Solving math problems</p>
+        </div>
+        <button class="start-button">Start Now</button>
+    </header>
 
-    <!-- Texto de apresentação -->
-    <div class="description">
-        <p>Prepare-se para uma aventura onde a matemática e a robótica se unem.<br>
-        Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô.<br>
-        Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
-    </div>
+    <!-- Seção de Desafios -->
+    <section id="challenges" class="hidden">
+        <h2>Escolha seu Desafio!</h2>
+        <div class="robot-container">
+            <div class="robot">
+                <img src="robot1.png" alt="Robô 1">
+                <p>Desafio 1: Soma Simples</p>
+                <button onclick="startChallenge(1)">Jogar</button>
+            </div>
+            <div class="robot">
+                <img src="robot2.png" alt="Robô 2">
+                <p>Desafio 2: Sequência Numérica</p>
+                <button onclick="startChallenge(2)">Jogar</button>
+            </div>
+            <div class="robot">
+                <img src="robot3.png" alt="Robô 3">
+                <p>Desafio 3: Multiplicação</p>
+                <button onclick="startChallenge(3)">Jogar</button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Botão estilizado para iniciar a montagem -->
-    <div style="text-align: center;">
-        <a href="montagem.html" class="botao-montagem">Começar a Montagem</a>
-    </div>
+    <!-- Seção Montagem do Robô -->
+    <section id="robot-parts" class="hidden">
+        <h2>Monte seu Robô!</h2>
+        <p>Você já conquistou algumas peças! Agora, é hora de montá-las.</p>
+        <div class="parts-container">
+            <!-- Peças desbloqueadas serão exibidas aqui -->
+            <div class="robot-part hidden" id="part1">
+                <img src="part1.png" alt="Cabeça">
+                <p>Cabeça</p>
+            </div>
+            <div class="robot-part hidden" id="part2">
+                <img src="part2.png" alt="Corpo">
+                <p>Corpo</p>
+            </div>
+            <div class="robot-part hidden" id="part3">
+                <img src="part3.png" alt="Pernas">
+                <p>Pernas</p>
+            </div>
+        </div>
+        <button onclick="playMore()">Jogar Mais e Ganhar Mais Peças!</button>
+    </section>
 
-    <!-- Rodapé -->
+    <!-- Seção Galeria de Robôs -->
+    <section id="robot-gallery" class="hidden">
+        <h2>Galeria de Robôs</h2>
+        <p>Veja os robôs montados por você e outros jogadores!</p>
+        <div id="robot-display">
+            <!-- Robôs criados serão exibidos aqui -->
+        </div>
+    </section>
+
     <footer>
-        © 2024 - Matech-Kids. Todos os direitos reservados.
+        <p>&copy; 2024 Aventura Matemática e Robótica</p>
     </footer>
+
+    <script>
+        // Variável para armazenar as peças desbloqueadas
+        let unlockedParts = [];
+
+        // Função para iniciar o jogo
+        document.querySelector(".start-button").addEventListener("click", function() {
+            document.querySelector("#challenges").classList.remove("hidden");
+            this.classList.add("hidden");
+        });
+
+        // Função para iniciar um desafio baseado no número
+        function startChallenge(challengeNumber) {
+            let question;
+            switch(challengeNumber) {
+                case 1:
+                    question = prompt("Quanto é 5 + 3?");
+                    if (question == 8) {
+                        alert("Correto! Você desbloqueou a Cabeça do Robô!");
+                        unlockPart(1);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+                case 2:
+                    question = prompt("Qual o próximo número na sequência: 2, 4, 6, ?");
+                    if (question == 8) {
+                        alert("Correto! Você desbloqueou o Corpo do Robô!");
+                        unlockPart(2);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+                case 3:
+                    question = prompt("Quanto é 7 x 4?");
+                    if (question == 28) {
+                        alert("Correto! Você desbloqueou as Pernas do Robô!");
+                        unlockPart(3);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+            }
+        }
+
+        // Função para desbloquear peças do robô
+        function unlockPart(partNumber) {
+            unlockedParts.push(partNumber);
+            document.getElementById(`part${partNumber}`).classList.remove("hidden");
+            checkAllParts();
+        }
+
+        // Verifica se todas as peças foram desbloqueadas
+        function checkAllParts() {
+            if (unlockedParts.length === 3) {
+                alert("Parabéns! Você montou seu robô completo!");
+                document.querySelector("#robot-gallery").classList.remove("hidden");
+            }
+        }
+
+        // Função para jogar mais desafios
+        function playMore() {
+            document.querySelector("#challenges").scrollIntoView();
+        }
+    </script>
+
 </body>
 </html>
