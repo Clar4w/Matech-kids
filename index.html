@@ -3,54 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matech Kids</title>
+    <title>Matech-Kids</title>
     <link href="https://fonts.googleapis.com/css2?family=Adorable+Font+Nine&family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilizando o fundo geral */
         body {
-            margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
             background-image: url('https://github.com/Clar4w/Matech-kids/blob/main/27%20Sem%20Ti%CC%81tulo_20241006175206.jpeg?raw=true');
             background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #003366; /* Azul marinho */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            color: #003366; /* Azul marinho */
+            justify-content: center;
+            min-height: 100vh; /* Para ocupar toda a altura da janela */
         }
 
-        h1 {
+        /* Estilizando o título principal com fundo azul escuro */
+        .title-container {
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .title-container h1 {
             font-family: 'Adorable Font Nine', cursive;
-            font-size: 3rem;
-            position: absolute;
-            top: 20%; /* Ajuste a posição conforme necessário */
-            left: 50%;
-            transform: translateX(-50%);
-            color: #00BFFF; /* Cor do fundo */
-            text-align: center;
+            font-size: 48px;
+            color: #00BFFF; /* Cor do título */
+            margin: 0;
+            text-shadow: 2px 2px #000; /* Sombra no texto */
         }
 
-        h2 {
-            font-family: 'Balsamiq Sans', cursive;
-            font-size: 2rem;
-            position: absolute;
-            top: 30%; /* Ajuste a posição conforme necessário */
-            left: 50%;
-            transform: translateX(-50%);
-            color: #003366; /* Azul marinho */
+        .subtitle-container {
             text-align: center;
+            margin-top: 10px;
         }
 
-        p {
+        .subtitle-container h2 {
             font-family: 'Balsamiq Sans', cursive;
-            font-size: 1.2rem;
-            position: absolute;
-            top: 40%; /* Ajuste a posição conforme necessário */
-            left: 50%;
-            transform: translateX(-50%);
+            font-size: 36px; /* Um pouco menor que o título */
             color: #003366; /* Azul marinho */
-            text-align: center;
-            max-width: 80%;
+            margin: 0;
+        }
+
+        .subtitle-container p {
+            font-family: 'Balsamiq Sans', cursive;
+            font-size: 20px; /* Menor que o subtítulo */
+            color: #003366; /* Azul marinho */
+            margin: 0;
+            max-width: 80%; /* Limita a largura do texto */
+            line-height: 1.5; /* Espaçamento entre linhas */
         }
 
         .button {
@@ -61,10 +67,8 @@
             border-radius: 25px; /* Botão redondinho */
             cursor: pointer;
             font-size: 1.5rem;
-            position: absolute;
-            bottom: 20%; /* Ajuste a posição conforme necessário */
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            margin-top: 20px; /* Espaçamento acima do botão */
         }
 
         .button:hover {
@@ -74,9 +78,13 @@
     </style>
 </head>
 <body>
-    <h1>Matech Kids</h1>
-    <h2>Construindo Robôs e Resolvendo Problemas Matemáticos</h2>
-    <p>Prepare-se para uma nova aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. Cada conta é uma chave para a próxima parte da construção. Vamos nessa?</p>
+    <div class="title-container">
+        <h1>Matek Kids</h1>
+    </div>
+    <div class="subtitle-container">
+        <h2>Construindo Robôs e Resolvendo Problemas Matemáticos</h2>
+        <p>Prepare-se para uma nova aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. Cada conta é uma chave para a próxima parte da construção. Vamos nessa?</p>
+    </div>
     <button class="button">Começar Agora</button>
 </body>
 </html>
