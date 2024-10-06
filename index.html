@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matech-Kids</title>
     <style>
+        /* Importando a fonte Fun Kids */
+        @import url('https://fonts.googleapis.com/css2?family=Fun+Kids&display=swap');
+
         /* Estilizando o fundo geral */
         body {
             font-family: 'Arial', sans-serif;
@@ -13,7 +16,7 @@
             padding: 0;
         }
 
-        /* Estilizando o título principal com fundo azul escuro */
+        /* Estilizando o título principal com a fonte Fun Kids */
         .title-container {
             background-color: #001f3f; /* Azul escuro */
             padding: 20px;
@@ -21,16 +24,25 @@
         }
 
         .title-container h1 {
-            font-family: 'Serif Bold', serif;
+            font-family: 'Fun Kids', cursive; /* Fonte Fun Kids */
             font-size: 48px;
             color: #e6f0ff; /* Texto em azul claro */
             margin: 0;
             text-shadow: 2px 2px #000; /* Sombra no texto */
         }
 
-        /* Estilizando o subtítulo em azul profundo */
+        /* Estilizando o "Kids" com cores e espessura */
+        .title-container .kids span:nth-child(1) { color: red; }   /* Letra K */
+        .title-container .kids span:nth-child(2) { color: orange; }/* Letra I */
+        .title-container .kids span:nth-child(3) { color: yellow; }/* Letra D */
+        .title-container .kids span:nth-child(4) { color: green; } /* Letra S */
+        .title-container .kids {
+            font-weight: bold; /* Mais grosso para Kids */
+        }
+
+        /* Estilizando o subtítulo em Fun Kids */
         h2 {
-            font-family: 'Serif Bold', serif;
+            font-family: 'Fun Kids', cursive;
             font-size: 30px;
             color: #003366; /* Azul profundo */
             text-align: center;
@@ -97,7 +109,7 @@
 <body>
     <!-- Título Principal com fundo azul escuro -->
     <div class="title-container">
-        <h1>Matech-Kids</h1>
+        <h1>Matech <span class="kids"><span>K</span><span>I</span><span>D</span><span>S</span></span></h1>
     </div>
 
     <!-- Subtítulo de boas-vindas com azul profundo -->
