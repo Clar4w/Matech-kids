@@ -10,54 +10,52 @@
 
     <!-- Cabeçalho -->
     <header>
-        <h1>Bem-vindos à Aventura Matemática e Robótica!</h1>
-        <p>Resolva desafios e monte seu robô!</p>
-        <button onclick="startGame()">Comece Agora!</button>
+        <div class="top-bar">
+            <h1>Building Robots</h1>
+            <p>Solving math problems</p>
+        </div>
+        <button class="start-button">Start Now</button>
     </header>
 
-    <!-- Seção Como Funciona -->
-    <section id="how-it-works">
-        <h2>Como Funciona?</h2>
-        <p>Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô!</p>
-        <ol>
-            <li>Escolha um desafio</li>
-            <li>Resolva o problema</li>
-            <li>Ganhe uma peça do robô</li>
-            <li>Monte seu robô!</li>
-        </ol>
-        <button onclick="chooseChallenge()">Escolha um Desafio!</button>
-    </section>
-
-    <!-- Seção Desafios Matemáticos -->
+    <!-- Seção de Desafios -->
     <section id="challenges">
-        <h2>Desafios Matemáticos</h2>
-        <div class="challenge-level">
-            <h3>Iniciante</h3>
-            <button onclick="startChallenge('iniciante')">Jogar</button>
+        <div class="robot-container">
+            <div class="robot">
+                <img src="robot1.png" alt="Robô 1">
+                <p>Solving</p>
+            </div>
+            <div class="robot">
+                <img src="robot2.png" alt="Robô 2">
+                <p>1, 2, 3</p>
+            </div>
+            <div class="robot">
+                <img src="robot3.png" alt="Robô 3">
+                <p>ends 0</p>
+            </div>
         </div>
-        <div class="challenge-level">
-            <h3>Intermediário</h3>
-            <button onclick="startChallenge('intermediario')">Jogar</button>
-        </div>
-        <div class="challenge-level">
-            <h3>Avançado</h3>
-            <button onclick="startChallenge('avancado')">Jogar</button>
-        </div>
+        <button class="start-button">Start Now</button>
     </section>
 
-    <!-- Seção Montagem do Robô -->
-    <section id="robot-builder">
-        <h2>Monte seu Robô!</h2>
-        <p>Você já conquistou algumas peças! Agora, é hora de montá-las.</p>
-        <div id="robot"></div>
-        <button onclick="playMore()">Jogar Mais e Ganhar Mais Peças!</button>
-    </section>
-
-    <!-- Seção Galeria de Robôs -->
-    <section id="gallery">
-        <h2>Galeria de Robôs</h2>
-        <div id="robot-gallery">
-            <!-- Robôs criados serão exibidos aqui -->
+    <!-- Seção de Peças do Robô -->
+    <section id="robot-parts">
+        <h2>Solving parts through the robot</h2>
+        <div class="parts-container">
+            <div class="robot">
+                <img src="part1.png" alt="Robô Peça 1">
+                <p>Scared</p>
+            </div>
+            <div class="robot">
+                <img src="part2.png" alt="Robô Peça 2">
+                <p>Santos</p>
+            </div>
+            <div class="robot">
+                <img src="part3.png" alt="Robô Peça 3">
+                <p>Safe 4</p>
+            </div>
+            <div class="robot">
+                <img src="part4.png" alt="Robô Peça 4">
+                <p>Insecta</p>
+            </div>
         </div>
     </section>
 
