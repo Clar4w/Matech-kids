@@ -1,73 +1,222 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Matemática e Robótica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Comic Sans MS', sans-serif;
-    background-color: #eef7fc;
-    color: #333;
-    text-align: center;
-    overflow-x: hidden;
-}
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #eef7fc;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
 
-header {
-    background-color: #4FC3F7;
-    padding: 20px;
-    position: relative;
-}
+        .hidden {
+            display: none;
+        }
 
-.top-bar h1 {
-    font-size: 2.2em;
-    margin-bottom: 5px;
-}
+        header {
+            background-color: #4FC3F7;
+            padding: 20px;
+            position: relative;
+        }
 
-.top-bar p {
-    font-size: 1.2em;
-}
+        .top-bar h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
 
-.start-button {
-    background-color: #ffcc00;
-    color: #333;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1.2em;
-    margin-top: 10px;
-}
+        .top-bar p {
+            font-size: 1.2em;
+        }
 
-.start-button:hover {
-    background-color: #ffdd44;
-}
+        .start-button {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
 
-#challenges, #robot-parts {
-    padding: 20px;
-}
+        .start-button:hover {
+            background-color: #ffdd44;
+        }
 
-.robot-container, .parts-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
+        #challenges, #robot-parts, #robot-gallery {
+            padding: 20px;
+        }
 
-.robot {
-    display: inline-block;
-    text-align: center;
-}
+        .robot-container, .parts-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-.robot img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-}
+        .robot, .robot-part {
+            display: inline-block;
+            text-align: center;
+        }
 
-footer {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-}
+        .robot img, .robot-part img {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="top-bar">
+            <h1>Building Robots</h1>
+            <p>Solving math problems</p>
+        </div>
+        <button class="start-button">Start Now</button>
+    </header>
+
+    <!-- Seção de Desafios -->
+    <section id="challenges" class="hidden">
+        <h2>Escolha seu Desafio!</h2>
+        <div class="robot-container">
+            <div class="robot">
+                <img src="robot1.png" alt="Robô 1">
+                <p>Desafio 1: Soma Simples</p>
+                <button onclick="startChallenge(1)">Jogar</button>
+            </div>
+            <div class="robot">
+                <img src="robot2.png" alt="Robô 2">
+                <p>Desafio 2: Sequência Numérica</p>
+                <button onclick="startChallenge(2)">Jogar</button>
+            </div>
+            <div class="robot">
+                <img src="robot3.png" alt="Robô 3">
+                <p>Desafio 3: Multiplicação</p>
+                <button onclick="startChallenge(3)">Jogar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Montagem do Robô -->
+    <section id="robot-parts" class="hidden">
+        <h2>Monte seu Robô!</h2>
+        <p>Você já conquistou algumas peças! Agora, é hora de montá-las.</p>
+        <div class="parts-container">
+            <!-- Peças desbloqueadas serão exibidas aqui -->
+            <div class="robot-part" id="part1" class="hidden">
+                <img src="part1.png" alt="Cabeça">
+                <p>Cabeça</p>
+            </div>
+            <div class="robot-part" id="part2" class="hidden">
+                <img src="part2.png" alt="Corpo">
+                <p>Corpo</p>
+            </div>
+            <div class="robot-part" id="part3" class="hidden">
+                <img src="part3.png" alt="Pernas">
+                <p>Pernas</p>
+            </div>
+        </div>
+        <button onclick="playMore()">Jogar Mais e Ganhar Mais Peças!</button>
+    </section>
+
+    <!-- Seção Galeria de Robôs -->
+    <section id="robot-gallery" class="hidden">
+        <h2>Galeria de Robôs</h2>
+        <p>Veja os robôs montados por você e outros jogadores!</p>
+        <div id="robot-display">
+            <!-- Robôs criados serão exibidos aqui -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aventura Matemática e Robótica</p>
+    </footer>
+
+    <script>
+        // Variável para armazenar as peças desbloqueadas
+        let unlockedParts = [];
+
+        // Função para iniciar o jogo
+        document.querySelector(".start-button").addEventListener("click", function() {
+            document.querySelector("#challenges").classList.remove("hidden");
+            this.classList.add("hidden");
+        });
+
+        // Função para iniciar um desafio baseado no número
+        function startChallenge(challengeNumber) {
+            let question;
+            switch(challengeNumber) {
+                case 1:
+                    question = prompt("Quanto é 5 + 3?");
+                    if (question == 8) {
+                        alert("Correto! Você desbloqueou a Cabeça do Robô!");
+                        unlockPart(1);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+                case 2:
+                    question = prompt("Qual o próximo número na sequência: 2, 4, 6, ?");
+                    if (question == 8) {
+                        alert("Correto! Você desbloqueou o Corpo do Robô!");
+                        unlockPart(2);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+                case 3:
+                    question = prompt("Quanto é 7 x 4?");
+                    if (question == 28) {
+                        alert("Correto! Você desbloqueou as Pernas do Robô!");
+                        unlockPart(3);
+                    } else {
+                        alert("Tente novamente.");
+                    }
+                    break;
+            }
+        }
+
+        // Função para desbloquear peças do robô
+        function unlockPart(partNumber) {
+            unlockedParts.push(partNumber);
+            document.getElementById(`part${partNumber}`).classList.remove("hidden");
+            checkAllParts();
+        }
+
+        // Verifica se todas as peças foram desbloqueadas
+        function checkAllParts() {
+            if (unlockedParts.length === 3) {
+                alert("Parabéns! Você montou seu robô completo!");
+                document.querySelector("#robot-gallery").classList.remove("hidden");
+            }
+        }
+
+        // Função para jogar mais desafios
+        function playMore() {
+            document.querySelector("#challenges").scrollIntoView();
+        }
+    </script>
+
+</body>
+</html>
+
