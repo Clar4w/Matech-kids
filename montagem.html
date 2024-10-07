@@ -7,35 +7,23 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #003366; /* Fundo azul escuro preenchido */
+            background-color: #f5f5f5;
             text-align: center;
             margin: 0;
-            padding: 0;
-            height: 100vh; /* Preenche a página toda */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 20px;
         }
 
         h1 {
-            color: #ffffff; /* Texto mais claro */
             font-family: 'Serif Bold', serif;
-            font-size: 48px;
-            padding: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento igual ao título "Matech-Kids" */
-            background-color: #002244; /* Fundo para o título */
-            margin: 0;
+            font-size: 36px;
+            color: #003366;
         }
 
         .robot-choice-container {
             display: flex;
-            flex-direction: column; /* Alinha as imagens uma embaixo da outra */
-            align-items: center;
+            justify-content: center;
+            gap: 50px;
             margin-top: 30px;
-        }
-
-        .robot-choice-container div {
-            margin-bottom: 20px; /* Espaçamento entre as imagens */
         }
 
         .robot-choice-container img {
@@ -49,10 +37,10 @@
             transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
         }
 
-        p {
-            color: #ffffff; /* Texto mais claro nas descrições */
-            font-size: 20px;
-            margin-top: 10px;
+        .instructions {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -62,17 +50,68 @@
 
     <!-- Container das imagens dos robôs -->
     <div class="robot-choice-container">
-        <!-- Robô Dançarino -->
+        <!-- Robô 1 -->
         <div>
-            <img src="link-para-imagem-robo1.png" alt="Robô Dançarino" onclick="window.location.href='robo-dancarino.html'">
-            <p>Robô Dançarino</p>
+            <img src="link-para-imagem-robo1.png" alt="Robô 1" onclick="escolherRobo('robo1')">
+            <p>Robô 1</p>
         </div>
 
-        <!-- Robô Pulga -->
+        <!-- Robô 2 -->
         <div>
-            <img src="link-para-imagem-robo2.png" alt="Robô Pulga" onclick="window.location.href='robo-pulga.html'">
-            <p>Robô Pulga</p>
+            <img src="link-para-imagem-robo2.png" alt="Robô 2" onclick="escolherRobo('robo2')">
+            <p>Robô 2</p>
         </div>
     </div>
+
+    <!-- Instruções -->
+    <p class="instructions" id="instructions"></p>
+
+    <!-- Container para os cálculos -->
+    <div id="calculos" style="display: none;">
+        <p>Resolva o seguinte cálculo para desbloquear uma peça do robô:</p>
+        <p id="pergunta"></p>
+        <input type="number" id="resposta" placeholder="Digite sua resposta">
+        <button onclick="verificarResposta()">Enviar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        // Função para escolher o robô
+        function escolherRobo(robo) {
+            document.getElementById('instructions').innerText = "Resolva os cálculos para desbloquear as peças do " + (robo === 'robo1' ? 'Robô 1' : 'Robô 2');
+            document.getElementById('calculos').style.display = 'block'; // Exibe o container dos cálculos
+            mostrarPergunta(); // Inicia a primeira conta
+        }
+
+        // Perguntas e respostas (você pode adicionar mais)
+        const perguntas = [
+            { pergunta: "4 x 4", resposta: 16 },
+            { pergunta: "5 x 3", resposta: 15 },
+            { pergunta: "6 x 2", resposta: 12 }
+        ];
+
+        let perguntaAtual = 0;
+
+        // Função para mostrar a pergunta
+        function mostrarPergunta() {
+            document.getElementById('pergunta').innerText = perguntas[perguntaAtual].pergunta;
+        }
+
+        // Função para verificar a resposta
+        function verificarResposta() {
+            const resposta = parseInt(document.getElementById('resposta').value);
+            if (resposta === perguntas[perguntaAtual].resposta) {
+                document.getElementById('resultado').innerText = "Correto! Você desbloqueou uma peça!";
+                perguntaAtual++; // Avança para a próxima pergunta
+                if (perguntaAtual < perguntas.length) {
+                    mostrarPergunta(); // Mostra a próxima pergunta
+                } else {
+                    document.getElementById('resultado').innerText = "Parabéns! Você desbloqueou todas as peças e pode montar o robô!";
+                }
+            } else {
+                document.getElementById('resultado').innerText = "Resposta incorreta. Tente novamente!";
+            }
+        }
+    </script>
 </body>
 </html>
