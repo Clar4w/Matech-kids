@@ -1,90 +1,131 @@
+Mas isso aí, só tá as mudanças que eu pedi, tá? A programação é da parte inicial toda. O que a gente falou assim, a programação do site da parte inicial tá assim
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matech-Kids</title>
-    <link href="https://fonts.googleapis.com/css2?family=Adorable+Font+Nine&family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilizando o fundo geral */
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://github.com/Clar4w/Matech-kids/blob/main/27%20Sem%20Ti%CC%81tulo_20241006175206.jpeg?raw=true');
-            background-size: cover;
+            background-color: #f5f5f5; /* Fundo branco */
             margin: 0;
             padding: 0;
-            color: #003366; /* Azul marinho */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Para ocupar toda a altura da janela */
         }
 
         /* Estilizando o título principal com fundo azul escuro */
         .title-container {
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+            background-color: #001f3f; /* Azul escuro */
             padding: 20px;
             text-align: center;
-            position: relative;
-            margin-top: 20px;
         }
 
         .title-container h1 {
-            font-family: 'Adorable Font Nine', cursive;
+            font-family: 'Serif Bold', serif;
             font-size: 48px;
-            color: #00BFFF; /* Cor do título */
+            color: #e6f0ff; /* Texto em azul claro */
             margin: 0;
             text-shadow: 2px 2px #000; /* Sombra no texto */
         }
 
-        .subtitle-container {
+        /* Estilizando o subtítulo em azul profundo */
+        h2 {
+            font-family: 'Serif Bold', serif;
+            font-size: 30px;
+            color: #003366; /* Azul profundo */
             text-align: center;
-            margin-top: 10px;
+            margin: 10px 0;
         }
 
-        .subtitle-container h2 {
-            font-family: 'Balsamiq Sans', cursive;
-            font-size: 36px; /* Um pouco menor que o título */
-            color: #003366; /* Azul marinho */
-            margin: 0;
+        /* Estilizando o parágrafo de descrição */
+        p {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            margin: 10px 20px;
         }
 
-        .subtitle-container p {
-            font-family: 'Balsamiq Sans', cursive;
-            font-size: 20px; /* Menor que o subtítulo */
-            color: #003366; /* Azul marinho */
-            margin: 0;
-            max-width: 80%; /* Limita a largura do texto */
-            line-height: 1.5; /* Espaçamento entre linhas */
+        /* Estilizando a imagem principal */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .button {
-            background-color: #FFD700; /* Amarelo */
+        .image-container img {
+            width: 300px;
+            height: auto;
+        }
+
+        /* Estilizando o texto sobre o nono ano em vermelho */
+        .nono-ano {
+            font-size: 14px;
+            color: red; /* Texto em vermelho */
+            text-align: center;
+            margin: 10px 20px;
+        }
+
+        /* Estilizando o botão */
+        .botao-montagem {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #003366; /* Azul escuro */
             color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px; /* Botão redondinho */
-            cursor: pointer;
-            font-size: 1.5rem;
-            position: relative;
-            margin-top: 20px; /* Espaçamento acima do botão */
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.5); /* Sombra do botão */
         }
 
-        .button:hover {
-            transform: scale(1.1); /* Efeito de aproximação ao passar o mouse */
-            transition: transform 0.3s ease;
+        .botao-montagem:hover {
+            background-color: #001f4d; /* Cor ao passar o mouse */
+            transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #001f3f;
+            color: white;
         }
     </style>
 </head>
 <body>
+    <!-- Título Principal com fundo azul escuro -->
     <div class="title-container">
-        <h1>Matek Kids</h1>
+        <h1>Matech-Kids</h1>
     </div>
-    <div class="subtitle-container">
-        <h2>Construindo Robôs e Resolvendo Problemas Matemáticos</h2>
-        <p>Prepare-se para uma nova aventura onde a matemática e a robótica se unem. Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô. Cada conta é uma chave para a próxima parte da construção. Vamos nessa?</p>
+
+    <!-- Subtítulo de boas-vindas com azul profundo -->
+    <h2>Bem-vindos ao Matech-Kids</h2>
+    
+    <!-- Container da Imagem -->
+    <div class="image-container">
+        <img src="https://raw.githubusercontent.com/Clar4w/Matech-kids/main/23%20Sem%20Ti%CC%81tulo_20241002073644.png" alt="Imagem de crianças montando">
     </div>
-    <button class="button">Começar Agora</button>
+
+    <!-- Parágrafo descritivo sobre a aventura -->
+    <p>Prepare-se para uma aventura onde a matemática e a robótica se unem.<br>
+    Resolva desafios matemáticos, desbloqueie peças e monte seu próprio robô.<br>
+    Cada conta é uma chave para a próxima parte da construção. Vamos nessa!</p>
+
+    <!-- Botão estilizado para iniciar a montagem -->
+    <div style="text-align: center;">
+        <a href="montagem.html" class="botao-montagem">Começar a Montagem</a>
+    </div>
+
+    <!-- Parágrafo sobre os alunos do nono ano em vermelho -->
+    <p class="nono-ano">Este site foi criado pelos alunos do nono ano para ajudar crianças a aprender matemática de forma divertida e interativa.</p>
+    
+    <!-- Rodapé com direitos -->
+    <footer>
+        © 2024 - Matech-Kids. Todos os direitos reservados.
+    </footer>
 </body>
-</html>
