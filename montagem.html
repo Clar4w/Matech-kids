@@ -7,30 +7,30 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #F2F2F2; /* Fundo claro para o restante da página */
+            background-color: #003366; /* Fundo azul escuro preenchido */
             text-align: center;
             margin: 0;
-            padding: 20px;
-        }
-
-        /* Estilo para a área do título com fundo completamente azul */
-        .title-container {
-            background-color: #003366; /* Fundo azul escuro */
-            padding: 20px;
-            margin: 0 auto;
-            width: 100%; /* Largura preenchendo toda a tela */
+            padding: 0;
+            height: 100vh; /* Preenche a página toda */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
-            color: #B0C4DE; /* Texto em azul mais claro */
+            color: #ffffff; /* Texto mais claro */
             font-family: 'Serif Bold', serif;
-            font-size: 36px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento no texto */
+            font-size: 48px;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombreamento igual ao título "Matech-Kids" */
+            background-color: #002244; /* Fundo para o título */
             margin: 0;
         }
 
         .robot-choice-container {
-            display: block; /* Organiza as imagens em colunas */
+            display: flex;
+            flex-direction: column; /* Alinha as imagens uma embaixo da outra */
+            align-items: center;
             margin-top: 30px;
         }
 
@@ -50,17 +50,15 @@
         }
 
         p {
-            color: #003366; /* Texto mais escuro nas descrições */
-            font-size: 18px;
+            color: #ffffff; /* Texto mais claro nas descrições */
+            font-size: 20px;
             margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Título principal com fundo azul escuro preenchendo toda a largura -->
-    <div class="title-container">
-        <h1>Escolha o robô que você gostaria de montar</h1>
-    </div>
+    <!-- Título principal -->
+    <h1>Escolha o robô que você gostaria de montar</h1>
 
     <!-- Container das imagens dos robôs -->
     <div class="robot-choice-container">
